@@ -17,5 +17,6 @@ Thumbs.db
 # jredis runtime files (persistence arrives in M7)
 *.aof
 *.rdb
-index/
+/index/
+/app/index/
 *.idx
