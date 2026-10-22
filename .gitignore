@@ -14,9 +14,6 @@ bin/
 .DS_Store
 Thumbs.db
 
-# jredis runtime files (persistence arrives in M7)
-*.aof
-*.rdb
+# index data created by the CLI
 /index/
 /app/index/
-*.idx
