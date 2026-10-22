@@ -1,0 +1,28 @@
+# query<TAB>relevant file names (matched against the end of the result URL)
+espresso grind	espresso.md
+milk foam pattern	latte-art.md
+steep coffee overnight	cold-brew.md
+paper filter coffee	pour-over.md
+coffee without caffeine	decaf.md
+caffeine	decaf.md
+green tea temperature	tea.md
+timbits	donuts.md
+boiled bread	bagels.md
+in-memory database	redis.md
+event loop	redis.md
+cache invalidation	caching.md
+range scan leaves	btree.md
+collision linear probing	hash-table.md
+left join	sql-joins.md
+write-ahead log	transactions.md
+three-way handshake	tcp.md
+status codes	http.md
+recursive descent parser	compilers.md
+young generation	garbage-collection.md
+commit branch	git.md
+inverse document frequency	search-engines.md
+crawl delay	robots-txt.md
+big nickel	sudbury.md
+first crack roast	coffee-roasting.md
+"cold brew"	cold-brew.md
+crawler	robots-txt.md	search-engines.md	http.md
