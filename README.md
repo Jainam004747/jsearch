@@ -44,6 +44,56 @@ jsearch is a private search engine written from scratch in Java with no dependen
 
 (`./gradlew run` executes from the `app/` folder, hence `../sample-corpus`; the index is created in `app/index`.)
 
+## Output
+
+Indexing the sample folder. One page is a copy of another and gets skipped:
+
+```text
+$ ./gradlew run --args="index-dir ../sample-corpus"
+...
+duplicate sample-corpus/zz-espresso-mirror.md
+indexed 24 files, 1 near-duplicates skipped
+```
+
+Searching:
+
+```text
+$ ./gradlew run --args="search coffee -decaf"
+7 results (23.5 ms)
+
+ 1. Coffee roasting  [1.92]
+    .../sample-corpus/coffee-roasting.md
+    Green coffee beans are roasted to develop flavour. As beans heat up they dry, turn yellow, then brown through the Maillard reaction and caramelisation. ...
+
+ 2. Pour-over coffee  [1.88]
+    .../sample-corpus/pour-over.md
+    Pour-over brewing means pouring hot water by hand over coffee grounds in a paper filter, as with a Hario V60 or a Chemex. ...
+
+ 3. French press brewing  [1.79]
+    .../sample-corpus/french-press.md
+    ... French press coffee has a heavy body and a rich texture. A common ratio is 1 gram of coffee to 15 grams of water. ...
+
+$ ./gradlew run --args='search "cold brew"'
+1 results (21.4 ms)
+
+ 1. Cold brew  [10.04]
+    .../sample-corpus/cold-brew.md
+    Cold brew coffee is made by steeping coarse grounds in cold or room-temperature water for 12 to 24 hours, then filtering. ...
+```
+
+Ranking quality on the judged queries:
+
+```text
+$ ./gradlew run --args="eval ../sample-judgments.tsv"
+...
+big nickel                               P@5 0.20  RR 1.00  nDCG@10 1.00
+first crack roast                        P@5 0.20  RR 1.00  nDCG@10 1.00
+"cold brew"                              P@5 0.20  RR 1.00  nDCG@10 1.00
+crawler                                  P@5 0.40  RR 1.00  nDCG@10 0.77
+
+mean: P@5 0.207  MRR 0.981  nDCG@10 0.978  (27 queries)
+```
+
 ## How it works
 
 ```
