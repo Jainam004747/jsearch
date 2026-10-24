@@ -86,5 +86,3 @@ jsearch is a private search engine written from scratch in Java with no dependen
 - **BM25 in practice.** IDF, saturation and length normalisation, plus why "the shorter page wins" is usually right.
 - **Measure quality, not only speed.** A judged query set turned "seems better" into numbers.
 - **Hashes are not interchangeable.** FNV-1a's high bits are weak for short keys, which broke SimHash until a finalizer mixed them (see DECISIONS.md).
-
-Developed with AI assistance (Claude) as a learning project.
